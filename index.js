@@ -3,6 +3,7 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 const searchBtn = document.querySelector(`.search button`)
 const searchInput = document.querySelector(`.search input`)
 const weatherIcon = document.querySelector(`.weather-icon`)
+let errorMessage = document.querySelector(`.error`)
 
 async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
@@ -75,6 +76,8 @@ function search() {
         }
     })
 
+
+
 }
 
 window.onload = function() {
@@ -85,5 +88,7 @@ window.onload = function() {
         checkWeather(`New York`)
     }
 }
+
+
 
 search()
